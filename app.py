@@ -6,7 +6,7 @@ import pickle as pkl
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 #Load the saved model
-model=pkl.load(open("final_model.p","rb"))
+model=pkl.load(open("Final_Model.p","rb"))
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
