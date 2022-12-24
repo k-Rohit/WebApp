@@ -10,7 +10,7 @@ model=pkl.load(open("Final_Model.p","rb"))
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
-def preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi ):
+def preprocess(gender,age,hypertension,heart_disease,ever_married,avg_glucose_level,bmi ):
 
     if gender == "Male" | gender == "male" | gender == "M":
         gender = 0
@@ -32,10 +32,10 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type
     else:
         ever_married = 0
 
-    if Residence_type == "Urban":
-        Residence_type = 1
-    else:
-        Residence_type = 0
+#     if Residence_type == "Urban":
+#         Residence_type = 1
+#     else:
+#         Residence_type = 0
 
     user_input=[gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi]
     user_input=np.array(user_input)
@@ -53,7 +53,7 @@ ever_married = st.radio("Married?", ['Yes','No'])
 avg_glucose_level = st.selectbox('Glucose Level',range(1,300,1))
 bmi = st.selectbox('BMI',range(10,90,1))
 
-pred = preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi)
+pred = preprocess(gender,age,hypertension,heart_disease,ever_married,avg_glucose_level,bmi)
 
 if pred[0] == 0:
     st.error('Warning! You have high risk of getting a stroke!')
