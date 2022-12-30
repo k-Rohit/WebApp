@@ -53,7 +53,7 @@ ever_married = st.radio("Married?", ['Yes','No'])
 avg_glucose_level = st.selectbox('Glucose Level',range(1,300,1))
 bmi = st.selectbox('BMI',range(10,90,1))
 
-pred = preprocess(gender,age,hypertension,heart_disease,ever_married,avg_glucose_level,bmi)
+pred = preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi)
 
 if pred[0] == 0:
     st.error('Warning! You have high risk of getting a stroke!')
