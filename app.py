@@ -77,7 +77,7 @@ Residence_type = st.radio("Residence Type",['Urban','Rural'])
 # b = int(input("Enter BMI"))
 
 
-pred = preprocess(g,a,hyt,ht,m,r,gl,b)
+pred = preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi)
 
 if pred == 0:
     st.error('Warning! You have high risk of getting a stroke!')
