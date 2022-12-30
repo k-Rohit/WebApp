@@ -10,7 +10,7 @@ model=pkl.load(open("Final_Model.p","rb"))
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
-def preprocess(gender,age,hypertension,heart_disease,ever_married,avg_glucose_level,bmi ):
+def preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi ):
 
     if gender == "Male" or gender == "male" or gender == "M":
         gender = 0
