@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 #Load the saved model
 model=pkl.load(open("Rfc_model.p","rb"))
-model.fit(X_train,y_train)
+# model.fit(X_train,y_train)
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
