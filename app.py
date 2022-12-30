@@ -11,7 +11,7 @@ model=pkl.load(open("Rfc_model.p","rb"))
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
-def preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi ):
+def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,avg_glucose_level,bmi ):
     
     if gender == "Male" or gender == "male" or gender == "M":
         gender = 0
@@ -52,7 +52,7 @@ heart_disease = st.radio("Ever had heart issues", ['Yes','No'])
 ever_married = st.radio("Married?", ['Yes','No'])
 avg_glucose_level = st.selectbox('Glucose Level',range(1,300,1))
 bmi = st.selectbox('Glucose Level',range(1,300,1))
-Residence_type = st.radio("Residence Type",['Urban','Rural'])
+residence_type = st.radio("Residence Type",['Urban','Rural'])
 # g = input("Enter your gender : ")
 # g = g.lower()
 
