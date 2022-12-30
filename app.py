@@ -3,10 +3,10 @@ import base64
 import sklearn
 import numpy as np
 import pickle as pkl
-from sklearn.preprocessing import MinMaxScaler
-scal=MinMaxScaler()
+# from sklearn.preprocessing import MinMaxScaler
+# scal=MinMaxScaler()
 #Load the saved model
-model=pkl.load(open("Final_Model.p","rb"))
+model=pkl.load(open("Rfc_model.p","rb"))
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
