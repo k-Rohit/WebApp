@@ -9,6 +9,30 @@ scal=MinMaxScaler()
 model=pkl.load(open("Rfc_model.p","rb"))
 # model.fit(X_train,y_train)
 
+
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import StratifiedKFold
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import precision_score, recall_score
+from sklearn.model_selection import cross_val_score
+
+skf = StratifiedKFold(n_splits=5)
+
+X = stroke.drop('stroke', axis=1)
+y = stroke['stroke']
+
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    test_size=0.2,
+                                                    random_state=42)
+
+Rfc_model = RandomForestClassifier()
+Rfc_model.fit(X_train,y_train)
+
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
 def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,avg_glucose_level,bmi ):
