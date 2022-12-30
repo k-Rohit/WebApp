@@ -52,6 +52,7 @@ heart_disease = st.radio("Ever had heart issues", ['Yes','No'])
 ever_married = st.radio("Married?", ['Yes','No'])
 avg_glucose_level = st.selectbox('Glucose Level',range(1,300,1))
 bmi = st.selectbox('BMI',range(10,90,1))
+Residence_type = st.radio("Residence Type",['Urban','Rural'])
 
 pred = preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi)
 
