@@ -12,7 +12,7 @@ st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",la
 
 def preprocess(gender,age,hypertension,heart_disease,ever_married,avg_glucose_level,bmi ):
 
-    if gender == "Male" | gender == "male" | gender == "M":
+    if gender == "Male" or gender == "male" or gender == "M":
         gender = 0
     else:
         gender = 1
