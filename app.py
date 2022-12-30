@@ -7,56 +7,79 @@ from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
 #Load the saved model
 model=pkl.load(open("Rfc_model.p","rb"))
+model.fit(X_train,y_train)
 
 st.set_page_config(page_title="Brain Stroke Predictor App",page_icon="⚕️",layout="centered",initial_sidebar_state="expanded")
 
 def preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi ):
-
+    
     if gender == "Male" or gender == "male" or gender == "M":
         gender = 0
     else:
         gender = 1
-
+        
     if hypertension == "Yes":
         hypertension = 1
     else:
         hypertension = 0
-
+    
     if heart_disease == "Yes":
         heart_disease = 1
     else:
         heart_disease = 0
-
+        
     if ever_married == "Yes":
         ever_married = 1
     else:
         ever_married = 0
-
-    if Residence_type == "Urban":
+        
+    if Residence_type == "urban":
         Residence_type = 1
     else:
         Residence_type = 0
+    
+        
+    pred = model.predict([[gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi ]])
+    return pred[0]
 
-    user_input=[gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi]
-    user_input=np.array(user_input)
-    user_input=user_input.reshape(1,-1)
-    user_input=scal.fit_transform(user_input)
-    prediction = model.predict(user_input)
 
-    return prediction
+
 
 age = st.selectbox ("Age",range(1,82,1))
 gender = st.radio("Select Gender: ", ('Male', 'Female'))
-hypertension = st.radio("Hypertension", ['Yes','No'])
+hypertension = st.radio("Hypertension", ['Yes','No']) 
 heart_disease = st.radio("Ever had heart issues", ['Yes','No'])
 ever_married = st.radio("Married?", ['Yes','No'])
 avg_glucose_level = st.selectbox('Glucose Level',range(1,300,1))
-bmi = st.selectbox('BMI',range(10,90,1))
+bmi = st.selectbox('Glucose Level',range(1,300,1))
 Residence_type = st.radio("Residence Type",['Urban','Rural'])
+# g = input("Enter your gender : ")
+# g = g.lower()
 
-pred = preprocess(gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi)
+# a = int(input("Enter your age : "))
 
-if pred[0] == 0:
+# hyt = input("Do you have hypertension ? yes or no : ")
+# hyt = hyt.lower()
+
+# ht = input("Do you have any heart Disease ? yes or no : ")
+# ht = ht.lower()
+
+# m = input("Have you been Married ? yes or no : ")
+# m = m.lower()
+
+
+# r = input("residency type ? rural or urban ? : ")
+# r = r.lower()
+
+# gl = input('enter glucose levels. ? Enter value or type "i do not know" : ' )
+# gl = gl.lower()
+
+# b = int(input("Enter BMI"))
+
+
+pred = preprocess(g,a,hyt,ht,m,r,gl,b)
+
+if pred == 0:
     st.error('Warning! You have high risk of getting a stroke!')
 
 else:
@@ -72,9 +95,16 @@ st.sidebar.info("Don't forget to rate this app")
 
 feedback = st.sidebar.slider('How much would you rate this app?',min_value=0,max_value=5,step=1)
 
+
 if feedback:
     st.header("Thank you for rating the app!")
-    st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
+    st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.") 
+        
+    
+
+    
+    
+   
 
 
 
