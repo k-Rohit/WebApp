@@ -33,13 +33,13 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
     else:
         ever_married = 0
         
-    if Residence_type == "urban":
-        Residence_type = 1
+    if residence_type == "Urban":
+        residence_type = 1
     else:
-        Residence_type = 0
+        residence_type = 0
     
         
-    pred = model.predict([[gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi ]])
+    pred = model.predict([[gender,age,hypertension,heart_disease,ever_married,residence_type,avg_glucose_level,bmi ]])
     return pred[0]
 
 
