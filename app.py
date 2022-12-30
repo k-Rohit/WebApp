@@ -32,10 +32,10 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,avg_glucose_le
     else:
         ever_married = 0
 
-#     if Residence_type == "Urban":
-#         Residence_type = 1
-#     else:
-#         Residence_type = 0
+    if Residence_type == "Urban":
+        Residence_type = 1
+    else:
+        Residence_type = 0
 
     user_input=[gender,age,hypertension,heart_disease,ever_married,Residence_type,avg_glucose_level,bmi]
     user_input=np.array(user_input)
