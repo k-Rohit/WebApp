@@ -3,8 +3,8 @@ import base64
 import sklearn
 import numpy as np
 import pickle as pkl
-# from sklearn.preprocessing import MinMaxScaler
-# scal=MinMaxScaler()
+from sklearn.preprocessing import MinMaxScaler
+scal=MinMaxScaler()
 #Load the saved model
 model=pkl.load(open("Rfc_model.p","rb"))
 
