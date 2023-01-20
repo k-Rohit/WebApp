@@ -34,11 +34,9 @@ rich==13.1.0
 scikit-learn==1.1.2
 scipy==1.9.3
 semver==2.13.0
-six @ file:///tmp/build/80754af9/six_1644875935023/work
 sklearn==0.0.post1
 smmap==5.0.0
 streamlit==1.17.0
-threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
 toml==0.10.2
 toolz==0.12.0
 tornado==6.2
