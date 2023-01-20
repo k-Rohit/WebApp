@@ -1,6 +1,0 @@
-numpy
-pandas
-streamlit
-mlxtend
-xgboost
-scikit-learn
