@@ -26,6 +26,15 @@ def show_predict_page():
 show_predict_page()
 
 
+work_type_mapping = {
+  "Government Job": 0,
+  "Never Worked": 1,
+  "Private": 2,
+  "Self Employed": 3,
+  "Children": 4
+}
+
+
 def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ):
 
     if gender == "Male":
@@ -53,16 +62,11 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
     else:
         residence_type = 0
     
-    if Work_Type == "Government Job":
-        Work_Type = 0
-    elif Work_Type == "Never Worked":
-        Work_Type = 1
-    elif Work_Type == "Private":
-        Work_Type = 2
-    elif Work_Type == "Self Employed":
-        Work_Type = 3
-    elif Work_Type == "Children":
-        Work_Type = 4
+    if work_type in work_type_mapping:
+        Work_value = work_type_mapping[work_type]
+    else:
+        Work_value = None
+        
     user_input=[gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
