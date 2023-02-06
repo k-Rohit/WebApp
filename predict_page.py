@@ -72,7 +72,7 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
     # print(pred)
     return prediction
 
-Gender = st.selectbox("Select your gender :", range(0,2,1))
+Gender = st.selectbox("Select your gender :", ['Male','Female'])
 
 Age = st.selectbox("What is your age ?",range(1,82,1))
 
