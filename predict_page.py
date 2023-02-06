@@ -28,41 +28,41 @@ show_predict_page()
 
 def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ):
 
-    # if gender == "Male":
-    #     gender = 0
-    # else:
-    #     gender = 1
-    #
-    # if hypertension == "Yes":
-    #     hypertension = 1
-    # else:
-    #     hypertension = 0
-    #
-    # if heart_disease == "Yes":
-    #     heart_disease = 1
-    # else:
-    #     heart_disease = 0
-    #
-    # if ever_married == "Yes":
-    #     ever_married = 1
-    # else:
-    #     ever_married = 0
-    #
-    # if residence_type == "Urban":
-    #     residence_type = 1
-    # else:
-    #     residence_type = 0
-    #
-    # if Work_Type == "Government Job":
-    #     Work_Type = 0
-    # elif Work_Type == "Never Worked":
-    #     Work_Type = 1
-    # elif Work_Type == "Private":
-    #     Work_Type = 2
-    # elif Work_Type == "Self Employed":
-    #     Work_Type = 3
-    # else:
-    #     Work_Type = 4
+    if gender == "Male":
+        gender = 0
+    else:
+        gender = 1
+    
+    if hypertension == "Yes":
+        hypertension = 1
+    else:
+        hypertension = 0
+    
+    if heart_disease == "Yes":
+        heart_disease = 1
+    else:
+        heart_disease = 0
+    
+    if ever_married == "Yes":
+        ever_married = 1
+    else:
+        ever_married = 0
+    
+    if residence_type == "Urban":
+        residence_type = 1
+    else:
+        residence_type = 0
+    
+    if Work_Type == "Government Job":
+        Work_Type = 0
+    elif Work_Type == "Never Worked":
+        Work_Type = 1
+    elif Work_Type == "Private":
+        Work_Type = 2
+    elif Work_Type == "Self Employed":
+        Work_Type = 3
+    else:
+        Work_Type = 4
     user_input=[gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ]
     user_input=np.array(user_input)
     user_input=user_input.reshape(1,-1)
