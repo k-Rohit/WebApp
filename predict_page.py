@@ -63,9 +63,9 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
         residence_type = 0
     
     if work_type in work_type_mapping:
-        Work_value = work_type_mapping[work_type]
+        Work_type = work_type_mapping[work_type]
     else:
-        Work_value = None
+        Work_type = None
         
     user_input=[gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ]
     user_input=np.array(user_input)
