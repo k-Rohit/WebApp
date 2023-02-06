@@ -76,19 +76,19 @@ Gender = st.selectbox("Select your gender :", ['Male','Female'])
 
 Age = st.selectbox("What is your age ?",range(1,82,1))
 
-hypertension = st.selectbox("Do you have hypertension?", range(0,2,1))
+hypertension = st.selectbox("Do you have hypertension?", ['Yes','No'])
 
-heart_disease = st.selectbox("Do you have or had any heart related issues", range(0,2,1))
+heart_disease = st.selectbox("Do you have or had any heart related issues", ['Yes','No'])
 
-Marriage_status = st.selectbox("What is your marital status ?" ,  range(0,2,1))
+Marriage_status = st.selectbox("What is your marital status ?" ,  ['Yes','No'])
 
-Residence_Type = st.selectbox("What is your residence type - Urban or Rural", range(0,2,1))
+Residence_Type = st.selectbox("What is your residence type - Urban or Rural", ['Urban','Rural'])
 
 Glucose_level = st.slider("Enter your average glucose level ?",50.0,280.0)
 
 BMI = st.slider("Enter your Body Mass Index value ?" , 10.0,95.0)
 
-Work_type = st.selectbox("What is your work type ? ", range(0,5,1))
+Work_type = st.selectbox("What is your work type ? ", ['Government Job','Never Worked','Private','Self Employed','Children'])
 
 preds = preprocess(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
 print(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
