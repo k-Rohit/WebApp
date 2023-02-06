@@ -62,8 +62,8 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
     else:
         residence_type = 0
     
-    if work_type in work_type_mapping:
-        Work_type = work_type_mapping[work_type]
+    if Work_type in work_type_mapping:
+        Work_type = work_type_mapping[Work_type]
     else:
         Work_type = None
         
