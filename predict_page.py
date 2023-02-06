@@ -35,7 +35,7 @@ work_type_mapping = {
 }
 
 
-def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ):
+def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,work_Type,avg_glucose_level,bmi ):
 
     if gender == "Male":
         gender = 0
@@ -62,7 +62,7 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
     else:
         residence_type = 0
     
-    if Work_type in work_type_mapping:
+    if work_type in work_type_mapping:
         Work_type = work_type_mapping[Work_type]
     else:
         Work_type = None
