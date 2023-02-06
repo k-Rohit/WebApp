@@ -61,7 +61,7 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
         Work_Type = 2
     elif Work_Type == "Self Employed":
         Work_Type = 3
-    else:
+    elif Work_Type == "Children":
         Work_Type = 4
     user_input=[gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ]
     user_input=np.array(user_input)
@@ -88,7 +88,7 @@ Glucose_level = st.slider("Enter your average glucose level ?",50.0,280.0)
 
 BMI = st.slider("Enter your Body Mass Index value ?" , 10.0,95.0)
 
-Work_type = st.selectbox("What is your work type ? ", range(0,4,1))
+Work_type = st.selectbox("What is your work type ? ", ['Government Job','Never Worked','Private','Self Employed','Children'])
 
 preds = preprocess(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
 print(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
@@ -118,5 +118,3 @@ if feedback:
     st.header("Thank you for rating the app!")
     st.info("Caution: This is just a prediction and not doctoral advice. Kindly see a doctor if you feel the symptoms persist.")
 
-
-print(sklearn.__version__)
