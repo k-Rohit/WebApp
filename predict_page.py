@@ -35,7 +35,7 @@ work_type_mapping = {
 }
 
 
-def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,work_Type,avg_glucose_level,bmi ):
+def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ):
 
     if gender == "Male":
         gender = 0
@@ -62,10 +62,10 @@ def preprocess(gender,age,hypertension,heart_disease,ever_married,residence_type
     else:
         residence_type = 0
     
-    if work_type in work_type_mapping:
-        Work_type = work_type_mapping[Work_type]
+    if Work_Type in work_type_mapping:
+        Work_Type = work_type_mapping[Work_Type]
     else:
-        Work_type = None
+        Work_Type = None
         
     user_input=[gender,age,hypertension,heart_disease,ever_married,residence_type,Work_Type,avg_glucose_level,bmi ]
     user_input=np.array(user_input)
@@ -94,7 +94,7 @@ BMI = st.slider("Enter your Body Mass Index value ?" , 10.0,95.0)
 
 Work_type = st.selectbox("What is your work type ? ", ['Government Job','Never Worked','Private','Self Employed','Children'])
 
-preds = preprocess(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Work_type,Glucose_level,BMI)
+preds = preprocess(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Work_Type,Glucose_level,BMI)
 # print(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
 # print(preds)
 
