@@ -88,7 +88,7 @@ Glucose_level = st.slider("Enter your average glucose level ?",50.0,280.0)
 
 BMI = st.slider("Enter your Body Mass Index value ?" , 10.0,95.0)
 
-Work_type = st.selectbox("What is your work type ? ", range(0,4,1)
+Work_type = st.selectbox("What is your work type ? ", range(0,4,1))
 
 preds = preprocess(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
 print(Gender,Age,hypertension,heart_disease,Marriage_status,Residence_Type,Glucose_level,BMI,Work_type)
